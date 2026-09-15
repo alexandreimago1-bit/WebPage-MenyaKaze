@@ -1,5 +1,18 @@
 import "./styles.css"
 import heroIMG from "./assets/hero.jpg"
+import { createHomePage } from "./pages/home.js"
 
-const heroImage= document.querySelector(".heroIMG img")
+ const heroImage= document.querySelector(".heroIMG img")
 heroImage.src = heroIMG
+
+export const webContent = document.getElementById("content")
+
+const homePage = createHomePage()
+webContent.appendChild(homePage)
+
+export const homeBtn = document.querySelector(".home")
+homeBtn.addEventListener("click", () => {
+    webContent.innerHTML = "";
+    const homePage = createHomePage()
+    webContent.appendChild(homePage)
+})
