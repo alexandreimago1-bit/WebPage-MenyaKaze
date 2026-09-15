@@ -3,7 +3,7 @@ import dishOnePic from '../assets/nigiri-and-maki-tuna-and-salmon-sushi.jpg'
 import dishTwoPic from '../assets/pork-katsu-curry.jpg'
 import dishThreePic from '../assets/tonkotsu-ramen.jpeg'
 
-export function createHomePage () {
+export function createHomePage (onBookTableClick) {
 
  const mainWrapper = document.createElement('div');
  mainWrapper.classList.add('content-wrapper')
@@ -116,5 +116,16 @@ const dishThreePrice = document.createElement('h4')
 dishThreePrice.classList.add('dishThreePrice')
 dishThreePrice.textContent = '$19.00'
 dish3.appendChild(dishThreePrice)
+
+// Contact Us button
+const contactUsGlimpse = document.createElement('section');
+contactUsGlimpse.classList.add('contactUs-section');
+mainWrapper.appendChild(contactUsGlimpse);
+
+const reserveBtn = document.createElement('button')
+reserveBtn.classList.add('reserveNowBtm')
+reserveBtn.textContent = 'Book a Table Now!'
+reserveBtn.addEventListener('click',onBookTableClick)
+contactUsGlimpse.appendChild(reserveBtn)
  return mainWrapper;
 }

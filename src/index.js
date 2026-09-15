@@ -7,12 +7,12 @@ heroImage.src = heroIMG
 
 export const webContent = document.getElementById("content")
 
-const homePage = createHomePage()
+const homePage = createHomePage(() => console.log("book a table clicked"))
 webContent.appendChild(homePage)
 
 export const homeBtn = document.querySelector(".home")
 homeBtn.addEventListener("click", () => {
     webContent.innerHTML = "";
-    const homePage = createHomePage()
+    const homePage = createHomePage(() => console.log("book a table clicked"))
     webContent.appendChild(homePage)
 })
