@@ -62,7 +62,7 @@ appetizersWrap.appendChild(appetizersTitle);
 
     const appetizerThreeName = document.createElement('h4')
     appetizerThreeName.classList.add('appDish3')
-    appetizerThreeName.textContent = 'Kaarage Bites'
+    appetizerThreeName.textContent = 'Karaage Bites'
     appetizerThreeWrap.appendChild(appetizerThreeName)
 
     const appetizerThreeDescription = document.createElement('p')
@@ -107,7 +107,7 @@ SushiAndRollsWrap.appendChild(SushiTitle);
     sushiOneWrap.appendChild(sushiOnePrice)
 
 
-            // Appetizer2
+            // Sushi2
     const sushiTwoWrap = document.createElement('div')
     sushiTwoWrap.classList.add('susDishTwoWrap')
     SushiAndRollsWrap.appendChild(sushiTwoWrap)
@@ -128,7 +128,7 @@ SushiAndRollsWrap.appendChild(SushiTitle);
     sushiTwoWrap.appendChild(sushiTwoPrice)
 
 
-           // Appetizer3
+           // Sushi3
     const sushiThreeWrap = document.createElement('div')
     sushiThreeWrap.classList.add('susDishThreeWrap')
     SushiAndRollsWrap.appendChild(sushiThreeWrap)
