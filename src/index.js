@@ -2,6 +2,7 @@ import "./styles.css"
 import heroIMG from "./assets/hero.jpg"
 import { createHomePage } from "./pages/home.js"
 import { createMenuPage } from "./pages/menu.js"
+import { createContactPage } from "./pages/contact.js"
 
  const heroImage= document.querySelector(".heroIMG img")
 heroImage.src = heroIMG
@@ -22,5 +23,12 @@ const menuBtn = document.querySelector(".menu")
 menuBtn.addEventListener("click", () => {
     webContent.innerHTML = "";
     const mainContent = createMenuPage()
+    webContent.appendChild(mainContent)
+})
+
+const contactBtn = document.querySelector(".contacts")
+contactBtn.addEventListener("click", () => {
+    webContent.innerHTML = ""
+    const mainContent = createContactPage()
     webContent.appendChild(mainContent)
 })

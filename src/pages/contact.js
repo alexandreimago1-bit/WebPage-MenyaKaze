@@ -1,3 +1,10 @@
+import fbIcon from "../assets/facebook.svg"
+import igIcon from "../assets/instagram.svg"
+import tiktokIcon from "../assets/tiktok.svg"
+import xIcon from "../assets/x.svg"
+
+
+
 function buildBookingForm(){
     const formContainer = document.createElement("div");
     formContainer.classList.add('form-container')
@@ -139,13 +146,67 @@ function buildBookingForm(){
 return formContainer
 }
 
+function createSocialMediaBtn (iconSrc, altText){
+    const link = document.createElement("a")
+    link.href = "#"
+    link.classList.add("socialBtn", altText)
+
+    const icon = document.createElement("img")
+    icon.src = iconSrc
+    icon.alt = altText
+    link.appendChild(icon)
+
+    return link
+}
+
 function buildContactInfo(){
-    
+    const contactInfoWrap = document.createElement("div")
+    contactInfoWrap.classList.add("contacts-Info")
+
+    const titleHeading = document.createElement("h2")
+    titleHeading.textContent = "Contact Us"
+    titleHeading.classList.add("contactHeading")
+    contactInfoWrap.appendChild(titleHeading)
+
+    const address = document.createElement("p")
+    address.classList.add("address")
+    address.textContent = "142 G. Roxas Street, Barangay San Roque, Marikina City, 1803 Metro Manila, Philippines"
+    contactInfoWrap.appendChild(address)
+
+    const email = document.createElement("p")
+    email.classList.add("email")
+    email.textContent = "reservations@menyakahze.ph"
+    contactInfoWrap.appendChild(email)
+
+    const phoneNumber = document.createElement("p")
+    phoneNumber.classList.add("phoneNumber")
+    phoneNumber.textContent = "(02) 8734-5921 / +63 917 555 4321"
+    contactInfoWrap.appendChild(phoneNumber)
+
+    const socialMediaWrap = document.createElement("div");
+    socialMediaWrap.classList.add("socMedWraps")
+    contactInfoWrap.appendChild(socialMediaWrap)
+
+    const igBtn = createSocialMediaBtn(igIcon, "Instagram");
+    socialMediaWrap.appendChild(igBtn);
+
+    const fbBtn = createSocialMediaBtn(fbIcon, "Facebook");
+    socialMediaWrap.appendChild(fbBtn);
+
+    const tiktokBtn = createSocialMediaBtn(tiktokIcon, "Tiktok");
+    socialMediaWrap.appendChild(tiktokBtn);
+
+    const xBtn = createSocialMediaBtn(xIcon, "X")
+    socialMediaWrap.appendChild(xBtn)
+
+
+    return contactInfoWrap;
 }
 
 export function createContactPage(){
     const wrapper = document.createElement('main')
     wrapper.appendChild(buildBookingForm())
+    wrapper.appendChild(buildContactInfo())
 
     return wrapper
 }
