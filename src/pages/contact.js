@@ -22,6 +22,10 @@ function buildBookingForm(){
     name.textContent = "Name"
     name.classList.add("title", "Name")
     NameContainer.appendChild(name)
+
+    const firstNameField = document.createElement('div');
+    firstNameField.classList.add('field-row');
+    NameContainer.appendChild(firstNameField);
     
     // first Name
 
@@ -29,28 +33,32 @@ function buildBookingForm(){
     firstNameLabel.classList.add("firstNameLabel", "label")
     firstNameLabel.htmlFor = "first-name"
     firstNameLabel.textContent = "FIRST NAME"
-    NameContainer.appendChild(firstNameLabel)
+    firstNameField.appendChild(firstNameLabel)
 
     const firstNameInput = document.createElement("input")
     firstNameInput.type = 'text'
     firstNameInput.classList.add("firstNameInput", "input")
     firstNameInput.id = "first-name"
     firstNameInput.required = true
-    NameContainer.appendChild(firstNameInput)
+    firstNameField.appendChild(firstNameInput)
+
+    const lastNameField = document.createElement('div');
+    lastNameField.classList.add('field-row');
+    NameContainer.appendChild(lastNameField);
 
     // Last Name
     const lastNameLabel = document.createElement('label')
     lastNameLabel.classList.add("lastNameLabel", "label")
     lastNameLabel.htmlFor = "last-name"
     lastNameLabel.textContent = "LAST NAME"
-    NameContainer.appendChild(lastNameLabel)
+    lastNameField.appendChild(lastNameLabel)
 
     const lastNameInput = document.createElement("input")
     lastNameInput.type = 'text'
     lastNameInput.id = "last-name"
     lastNameInput.classList.add("lastNameInput", "input")
     lastNameInput.required = true
-    NameContainer.appendChild(lastNameInput)
+    lastNameField.appendChild(lastNameInput)
 
     // Email
     const emailContainer = document.createElement("div")

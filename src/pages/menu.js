@@ -5,7 +5,7 @@ export function createMenuPage (){
     
 // Appetizers
 const appetizersWrap = document.createElement('section')
-appetizersWrap.classList.add('appetizersSection')
+appetizersWrap.classList.add('appetizersSection', 'menu-category')
 menuWrapper.appendChild(appetizersWrap)
 
 const appetizersTitle = document.createElement('h2');
@@ -78,7 +78,7 @@ appetizersWrap.appendChild(appetizersTitle);
 
     // Sushi And Rolls
 const SushiAndRollsWrap = document.createElement('section')
-SushiAndRollsWrap.classList.add('SushiAndRollsSection')
+SushiAndRollsWrap.classList.add('SushiAndRollsSection', 'menu-category')
 menuWrapper.appendChild(SushiAndRollsWrap)
 
 const SushiTitle = document.createElement('h2');
@@ -151,7 +151,7 @@ SushiAndRollsWrap.appendChild(SushiTitle);
 
     // Rice Dishes
 const riceDishesWrap = document.createElement('section')
-riceDishesWrap.classList.add('riceDishesSection')
+riceDishesWrap.classList.add('riceDishesSection', 'menu-category')
 menuWrapper.appendChild(riceDishesWrap)
 
 const riceDishesTitle = document.createElement('h2');
@@ -224,7 +224,7 @@ riceDishesWrap.appendChild(riceDishesTitle);
 
     // Ramen
 const ramenWrap = document.createElement('section')
-ramenWrap.classList.add('ramenSection')
+ramenWrap.classList.add('ramenSection', 'menu-category')
 menuWrapper.appendChild(ramenWrap)
 
 const ramenTitle = document.createElement('h2');
@@ -297,7 +297,7 @@ ramenWrap.appendChild(ramenTitle);
 
     // Drinks
 const drinksWrap = document.createElement('section')
-drinksWrap.classList.add('drinksSection')
+drinksWrap.classList.add('drinksSection', 'menu-category')
 menuWrapper.appendChild(drinksWrap)
 
 const drinksTitle = document.createElement('h2');
@@ -370,7 +370,7 @@ drinksWrap.appendChild(drinksTitle);
 
     // Desserts
 const dessertsWrap = document.createElement('section')
-dessertsWrap.classList.add('dessertsSection')
+dessertsWrap.classList.add('dessertsSection', 'menu-category')
 menuWrapper.appendChild(dessertsWrap)
 
 const dessertsTitle = document.createElement('h2');

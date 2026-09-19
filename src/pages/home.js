@@ -13,20 +13,33 @@ export function createHomePage (onBookTableClick) {
  ourStory.classList.add('story-section')
  mainWrapper.appendChild(ourStory);
 
- const storyIMG = document.createElement('img');
- storyIMG.src = StoryPic
- storyIMG.alt = 'Menya Kaze restaurant'
- ourStory.appendChild(storyIMG)
+ const storyHeader = document.createElement('div');
+ storyHeader.classList.add('story-header');
+ ourStory.appendChild(storyHeader);
 
  const storyHeading = document.createElement('h2');
  storyHeading.classList.add('story-heading')
  storyHeading.textContent = 'Our Story';
- ourStory.appendChild(storyHeading);
+ storyHeader.appendChild(storyHeading);
+
+ const storyContent = document.createElement('div');
+ storyContent.classList.add('story-content');
+ ourStory.appendChild(storyContent);
+
+ const storyIMG = document.createElement('img');
+ storyIMG.src = StoryPic
+ storyIMG.alt = 'Menya Kaze restaurant'
+ storyIMG.classList.add('story-image')
+ storyContent.appendChild(storyIMG)
+
+ const storyText = document.createElement('div');
+ storyText.classList.add('story-text');
+ storyContent.appendChild(storyText);
 
  const storyGlimpse = document.createElement('p')
  storyGlimpse.classList.add('story-glimpse')
  storyGlimpse.textContent = 'Menya Kaze began with a single bowl, a small stove, and a promise: broth worth waiting for. Named after the wind that carried the scent of simmering pork bones through a quiet backstreet in Kyoto, Kaze was built on the idea that ramen should feel like coming home — warm, unhurried, honest. Every bowl we serve today still follows that first recipe, refined but never rushed.';
- ourStory.appendChild(storyGlimpse)
+ storyText.appendChild(storyGlimpse)
 
 
 // menu best seller glimpse
@@ -39,10 +52,14 @@ bestSellerTitle.classList.add('menu-title');
 bestSellerTitle.textContent = 'Best Sellers'
 menuGlimpse.appendChild(bestSellerTitle)
 
+const dishesContainer = document.createElement("div");
+dishesContainer.classList.add("dish-containers")
+menuGlimpse.appendChild(dishesContainer)
+
 // Dish One
 const dish1 = document.createElement('div')
 dish1.classList.add('dish-one')
-menuGlimpse.appendChild(dish1)
+dishesContainer.appendChild(dish1)
 
 const dishOneIMG = document.createElement('img') 
 dishOneIMG.classList.add('dishPic')
@@ -68,7 +85,7 @@ dish1.appendChild(dishOnePrice)
 // Dish Two
 const dish2 = document.createElement('div')
 dish2.classList.add('dish-two')
-menuGlimpse.appendChild(dish2)
+dishesContainer.appendChild(dish2)
 
 const dishTwoIMG = document.createElement('img') 
 dishTwoIMG.classList.add('dishtwoPic')
@@ -94,7 +111,7 @@ dish2.appendChild(dishTwoPrice)
 // Dish Three
 const dish3 = document.createElement('div')
 dish3.classList.add('dish-three')
-menuGlimpse.appendChild(dish3)
+dishesContainer.appendChild(dish3)
 
 const dishThreeIMG = document.createElement('img') 
 dishThreeIMG.classList.add('dishthreePic')

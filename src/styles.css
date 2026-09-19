@@ -1,0 +1,705 @@
+/* =========================================
+   GLOBAL THEME + BASE STYLES
+   ========================================= */
+
+:root {
+    --bg: #120f0d;
+    --bg-soft: #1b1714;
+    --panel: rgba(32, 26, 22, 0.92);
+    --panel-alt: rgba(48, 38, 31, 0.95);
+    --card: rgba(24, 20, 17, 0.96);
+    --accent: #d89a5a;
+    --accent-strong: #f1b86d;
+    --accent-soft: rgba(216, 154, 90, 0.15);
+    --text: #f6efe9;
+    --muted: #d3c3b3;
+    --line: rgba(255, 255, 255, 0.08);
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.34);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    min-height: 100%;
+    background: #0d0b0a;
+    overscroll-behavior-y: none;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, rgba(216, 154, 90, 0.12), transparent 32%),
+        linear-gradient(180deg, #0d0b0a 0%, #120f0d 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    overscroll-behavior-y: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+/* =========================================
+   HERO + NAVIGATION
+   ========================================= */
+
+header.heroIMG {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    background: #1b1714;
+}
+
+header.heroIMG img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.85) contrast(1.08) brightness(0.74);
+}
+
+#navBar {
+    position: absolute;
+    left: 50%;
+    bottom: 26px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    background: rgba(12, 10, 8, 0.68);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+}
+
+.navBtn {
+    padding: 0.7rem 1.1rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.navBtn:hover,
+.navBtn:focus-visible {
+    border-color: var(--accent);
+    background: rgba(216, 154, 90, 0.08);
+    color: var(--accent-strong);
+    outline: none;
+}
+
+#content,
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+}
+
+/* =========================================
+   HOME PAGE SECTIONS
+   ========================================= */
+
+.content-wrapper {
+    display: grid;
+    gap: 2rem;
+}
+
+.story-section,
+.menu-section,
+.contactUs-section,
+.appetizersSection,
+.SushiAndRollsSection,
+.riceDishesSection,
+.form-container,
+.contacts-Info,
+.aboutStoryWrap,
+.storyOneContainer,
+.storyTwoContainer,
+.storyThreeContainer,
+.storyFourContainer {
+    background: linear-gradient(180deg, rgba(28, 23, 20, 0.96), rgba(19, 15, 13, 0.96));
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+}
+
+.story-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.5rem;
+}
+
+.story-header {
+    width: 100%;
+}
+
+.story-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.story-image {
+    width: min(42%, 460px);
+    min-height: 320px;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+}
+
+.story-text {
+    flex: 1;
+    max-width: 620px;
+}
+
+.story-heading,
+.menu-title,
+.appetizer-title,
+.sushi-and-rolls-title,
+.rice-dishes-title,
+.ramen-title,
+.drinks-title,
+.desserts-title,
+.contactHeading,
+.ourStoryTitle {
+    margin: 0 0 0.7rem;
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: 0.03em;
+    color: var(--text);
+}
+
+.story-heading,
+.menu-title,
+.appetizer-title,
+.sushi-and-rolls-title,
+.rice-dishes-title,
+.ramen-title,
+.drinks-title,
+.desserts-title,
+.contactHeading,
+.ourStoryTitle {
+    font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.story-glimpse,
+.storyOneContent,
+.storyTwoContent,
+.storyThreeContent,
+.storyFourContent,
+.appDish1Desc,
+.appDish2Desc,
+.appDish3Desc,
+.susDish1Desc,
+.susDish2Desc,
+.susDish3Desc,
+.riceDish1Desc,
+.riceDish2Desc,
+.riceDish3Desc,
+.ramen1Desc,
+.ramen2Desc,
+.ramen3Desc,
+.drink1Desc,
+.drink2Desc,
+.drink3Desc,
+.dessert1Desc,
+.dessert2Desc,
+.dessert3Desc,
+.address,
+.email,
+.phoneNumber {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.menu-category {
+    padding: 1.5rem;
+    background: linear-gradient(180deg, rgba(28, 23, 20, 0.96), rgba(19, 15, 13, 0.96));
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+}
+
+.menu-section {
+    padding: 1.5rem;
+}
+
+.contactUs-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+    padding: 2rem 1.5rem;
+    background-image: linear-gradient(rgba(14, 11, 10, 0.5), rgba(14, 11, 10, 0.6)), url('./assets/story-image.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.contactUs-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 12, 10, 0.28);
+}
+
+.contactUs-section .reserveNowBtm {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 0 auto;
+}
+
+.dish-containers {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+/* =========================================
+   MENU PAGE STYLING
+   ========================================= */
+
+.dish-one,
+.dish-two,
+.dish-three {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: rgba(25, 19, 16, 0.9);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 0.8rem;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.dish-one:hover,
+.dish-two:hover,
+.dish-three:hover,
+.AppDishOneWrap:hover,
+.AppDishTwoWrap:hover,
+.AppDishThreeWrap:hover,
+.susDishOneWrap:hover,
+.susDishTwoWrap:hover,
+.susDishThreeWrap:hover,
+.riceDishOneWrap:hover,
+.riceDishTwoWrap:hover,
+.riceDishThreeWrap:hover,
+.ramenOneWrap:hover,
+.ramenTwoWrap:hover,
+.ramenThreeWrap:hover,
+.drinkOneWrap:hover,
+.drinkTwoWrap:hover,
+.drinkThreeWrap:hover,
+.dessertOneWrap:hover,
+.dessertTwoWrap:hover,
+.dessertThreeWrap:hover {
+    transform: translateY(-2px);
+    border-color: rgba(241, 184, 109, 0.5);
+}
+
+.dishPic,
+.dishtwoPic,
+.dishthreePic {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.dishOneName,
+.dishTwoName,
+.dishThreeName,
+.appDish1,
+.appDish2,
+.appDish3,
+.susDish1,
+.susDish2,
+.susDish3,
+.riceDish1,
+.riceDish2,
+.riceDish3,
+.storyOneTitle,
+.storyTwoTitle,
+.storyThreeTitle,
+.storyFourTitle {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+.dishOnePrice,
+.dishTwoPrice,
+.dishThreePrice,
+.appDish1Price,
+.appDish2Price,
+.appDish3Price,
+.susDish1Price,
+.susDish2Price,
+.susDish3Price,
+.riceDish1Price,
+.riceDish2Price,
+.riceDish3Price,
+.ramen1Price,
+.ramen2Price,
+.ramen3Price,
+.drink1Price,
+.drink2Price,
+.drink3Price,
+.dessert1Price,
+.dessert2Price,
+.dessert3Price {
+    margin: 0;
+    color: var(--accent-strong);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.reserveNowBtm {
+    margin-top: 1rem;
+    border: none;
+    border-radius: 999px;
+    padding: 0.95rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+    color: #1a120d;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 12px 24px rgba(216, 154, 90, 0.26);
+}
+
+.reserveNowBtm:hover,
+.reserveNowBtm:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 28px rgba(216, 154, 90, 0.32);
+    outline: none;
+}
+
+.menu-wrap {
+    display: grid;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.appetizersSection,
+.SushiAndRollsSection,
+.riceDishesSection,
+.ramenSection,
+.drinksSection,
+.dessertsSection {
+    padding: 1.5rem;
+}
+
+.AppDishOneWrap,
+.AppDishTwoWrap,
+.AppDishThreeWrap,
+.susDishOneWrap,
+.susDishTwoWrap,
+.susDishThreeWrap,
+.riceDishOneWrap,
+.riceDishTwoWrap,
+.riceDishThreeWrap,
+.ramenOneWrap,
+.ramenTwoWrap,
+.ramenThreeWrap,
+.drinkOneWrap,
+.drinkTwoWrap,
+.drinkThreeWrap,
+.dessertOneWrap,
+.dessertTwoWrap,
+.dessertThreeWrap {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.4rem 1rem;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.AppDishOneWrap:last-child,
+.AppDishTwoWrap:last-child,
+.AppDishThreeWrap:last-child,
+.susDishOneWrap:last-child,
+.susDishTwoWrap:last-child,
+.susDishThreeWrap:last-child,
+.riceDishOneWrap:last-child,
+.riceDishTwoWrap:last-child,
+.riceDishThreeWrap:last-child,
+.ramenOneWrap:last-child,
+.ramenTwoWrap:last-child,
+.ramenThreeWrap:last-child,
+.drinkOneWrap:last-child,
+.drinkTwoWrap:last-child,
+.drinkThreeWrap:last-child,
+.dessertOneWrap:last-child,
+.dessertTwoWrap:last-child,
+.dessertThreeWrap:last-child {
+    border-bottom: none;
+}
+
+.appDish1Desc,
+.appDish2Desc,
+.appDish3Desc,
+.susDish1Desc,
+.susDish2Desc,
+.susDish3Desc,
+.riceDish1Desc,
+.riceDish2Desc,
+.riceDish3Desc,
+.ramen1Desc,
+.ramen2Desc,
+.ramen3Desc,
+.drink1Desc,
+.drink2Desc,
+.drink3Desc,
+.dessert1Desc,
+.dessert2Desc,
+.dessert3Desc {
+    grid-column: 1 / 2;
+}
+
+.appDish1Price,
+.appDish2Price,
+.appDish3Price,
+.susDish1Price,
+.susDish2Price,
+.susDish3Price,
+.riceDish1Price,
+.riceDish2Price,
+.riceDish3Price,
+.ramen1Price,
+.ramen2Price,
+.ramen3Price,
+.drink1Price,
+.drink2Price,
+.drink3Price,
+.dessert1Price,
+.dessert2Price,
+.dessert3Price {
+    grid-column: 2 / 3;
+    justify-self: end;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+/* =========================================
+   BOOKING FORM + CONTACT SECTION
+   ========================================= */
+
+.form-container,
+.contacts-Info {
+    padding: 1.4rem;
+}
+
+.name-section,
+.email-container,
+.party-size-container,
+.date-time-container {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.name-section {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.field-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.label {
+    color: var(--muted);
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.input {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: rgba(15, 12, 10, 0.8);
+    color: var(--text);
+    border-radius: 12px;
+    padding: 0.85rem 0.9rem;
+}
+
+.input:focus {
+    outline: 2px solid rgba(241, 184, 109, 0.45);
+    border-color: rgba(241, 184, 109, 0.7);
+}
+
+#booking-Form button[type="submit"] {
+    margin-top: 0.6rem;
+    border: none;
+    border-radius: 12px;
+    padding: 0.9rem 1.2rem;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+    color: #1a120d;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.contacts-Info {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.socMedWraps {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.socialBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(216, 154, 90, 0.08);
+    border: 1px solid rgba(216, 154, 90, 0.3);
+    transition: all 0.2s ease;
+}
+
+.socialBtn:hover {
+    transform: translateY(-2px);
+    background: rgba(216, 154, 90, 0.16);
+}
+
+.socialBtn img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
+
+.aboutStoryWrap {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.storyOneContainer,
+.storyTwoContainer,
+.storyThreeContainer,
+.storyFourContainer {
+    padding: 1.2rem 1.4rem;
+}
+
+.storySlogan {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--accent-strong);
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 820px) {
+    .story-content,
+    .dish-containers,
+    .name-section {
+        grid-template-columns: 1fr;
+    }
+
+    .story-content {
+        flex-direction: column;
+    }
+
+    .story-image {
+        width: 100%;
+        max-width: 520px;
+    }
+
+    header.heroIMG {
+        height: 320px;
+    }
+
+    #navBar {
+        width: calc(100% - 24px);
+        border-radius: 18px;
+    }
+}
+
+@media (max-width: 560px) {
+    #content,
+    main {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .navBtn {
+        flex: 1 1 40%;
+    }
+
+    .AppDishOneWrap,
+    .AppDishTwoWrap,
+    .AppDishThreeWrap,
+    .susDishOneWrap,
+    .susDishTwoWrap,
+    .susDishThreeWrap,
+    .riceDishOneWrap,
+    .riceDishTwoWrap,
+    .riceDishThreeWrap {
+        grid-template-columns: 1fr;
+    }
+
+    .appDish1Price,
+    .appDish2Price,
+    .appDish3Price,
+    .susDish1Price,
+    .susDish2Price,
+    .susDish3Price,
+    .riceDish1Price,
+    .riceDish2Price,
+    .riceDish3Price {
+        justify-self: start;
+        grid-column: auto;
+    }
+}
