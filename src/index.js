@@ -3,6 +3,7 @@ import heroIMG from "./assets/hero.jpg"
 import { createHomePage } from "./pages/home.js"
 import { createMenuPage } from "./pages/menu.js"
 import { createContactPage } from "./pages/contact.js"
+import { createAboutPage } from "./pages/about.js"
 
  const heroImage= document.querySelector(".heroIMG img")
 heroImage.src = heroIMG
@@ -30,5 +31,12 @@ const contactBtn = document.querySelector(".contacts")
 contactBtn.addEventListener("click", () => {
     webContent.innerHTML = ""
     const mainContent = createContactPage()
+    webContent.appendChild(mainContent)
+})
+
+const aboutUsBtn = document.querySelector(".about-us");
+aboutUsBtn.addEventListener("click", () => {
+    webContent.innerHTML = ""
+    const mainContent = createAboutPage()
     webContent.appendChild(mainContent)
 })
